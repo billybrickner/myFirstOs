@@ -1,0 +1,18 @@
+times:
+
+	Link: 
+	https://softwareengineering.stackexchange.com/questions/165025/what-is-the-difference-between-times-and-dup-in-assembly-language
+
+	Use DUP instead of times
+
+	DUP is a directive
+
+	Use DUP instead of times?
+
+	Acctually no, this doesn't work 
+
+Directive:
+
+	Link: https://docs.oracle.com/cd/E26502_01/html/E28388/eoiyg.html
+
+	Directives are things that aren't assembly instructions, they begin with a period for x86 assumbly
