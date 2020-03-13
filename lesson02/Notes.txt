@@ -1,0 +1,5 @@
+Wikipedia page for notes on int 0x10
+
+https://en.wikipedia.org/wiki/INT_10H
+
+Note: Color doesn't work :(
