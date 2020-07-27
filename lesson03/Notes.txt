@@ -1,0 +1,10 @@
+Data and instructions are stored in memory
+
+The BIOS places the boot section at 0x7c00
+
+Macros are something that work in NASM, but they use the percentage sign
+https://www.tutorialspoint.com/assembly_programming/assembly_macros.htm#:~:text=Advertisements,%25macro%20and%20%25endmacro%20directives.
+https://nasm.us/doc/nasmdoc4.html
+
+The org directive sets a location counter and makes labels absolutely addressable
+http://www.ece.utep.edu/courses/web3376/Directives.html
