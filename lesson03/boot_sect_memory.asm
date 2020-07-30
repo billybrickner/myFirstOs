@@ -1,35 +1,35 @@
-%define tty_mode 0x0e
-%define tty_print 0x10
+%define putc 0x0e
+%define BIOSVid 0x10
 
 ; Test Secret Print
 [org 0x7c00]
-mov ah, tty_mode
+mov ah, putc
 
 ; Attempt 1
 mov al, "1"
-int tty_print
+int BIOSVid
 mov al, the_secret
-int tty_print
+int BIOSVid
 
 ; Attempt 2
 mov al, "2"
-int tty_print
+int BIOSVid
 mov al, [the_secret]
-int tty_print
+int BIOSVid
 
 ; Attempt 3
 mov al, "3"
-int tty_print
+int BIOSVid
 mov bx, the_secret
 add bx, 0x7C00
 mov al, [bx]
-int tty_print
+int BIOSVid
 
 ; Attempt 4
 mov al, "4"
-int tty_print
+int BIOSVid
 mov al, [0x7c2d]
-int tty_print
+int BIOSVid
 
 ; Infinite loop
 jmp $;

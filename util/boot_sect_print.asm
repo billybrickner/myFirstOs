@@ -12,8 +12,8 @@ start:
     cmp al, 0
     je done
 
-    mov ah, tty_mode
-    int tty_print
+    mov ah, putc
+    int BIOSVid
 
     add bx, 1
     jmp start
@@ -26,10 +26,10 @@ done:
 
 print_nl:
     pusha
-    mov ah, tty_mode
+    mov ah, putc
     mov al, 0x0a ; newline char
-    int tty_print
+    int BIOSVid
     mov al, 0x0d ; carriage return
-    int tty_print
+    int BIOSVid
     popa
     ret

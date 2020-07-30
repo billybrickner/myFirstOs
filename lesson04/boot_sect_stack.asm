@@ -1,7 +1,7 @@
-%define tty_mode 0x0e
-%define tty_print 0x10
+%define putc 0x0e
+%define BIOSVid 0x10
 
-mov ah, tty_mode
+mov ah, putc
 
 ; Setup stack
 mov bp, 0x8000
@@ -13,29 +13,29 @@ push 'C'
 
 ; show stack top
 mov al, [0x7ffe]
-int tty_print
+int BIOSVid
 
 ; attempt to access stack bottom
 mov al, [0x8000]
-int tty_print
+int BIOSVid
 
 ; pop characters
 ; note: we only need a byte, not a word so the bx register is used as
 ; an intermediate
 pop bx
 mov al, bl
-int tty_print
+int BIOSVid
 
 pop bx
 mov al, bl
-int tty_print
+int BIOSVid
 
 pop bx
 mov al, bl
-int tty_print
+int BIOSVid
 
 mov al, [0x8000]
-int tty_print
+int BIOSVid
 
 ; Infinite loop
 jmp $
