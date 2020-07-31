@@ -1,3 +1,5 @@
+%ifndef BOOT_SECT_PRINT_ASM
+%define BOOT_SECT_PRINT_ASM
 %include "../util/defConst.asm"
 
 print:
@@ -33,3 +35,4 @@ print_nl:
     int BIOSVid
     popa
     ret
+%endif ; BOOT_SECT_PRINT_ASM
